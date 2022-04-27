@@ -10,9 +10,9 @@ app.use(express.json());
 
 // Cors integration 
 app.use((req, res, next) => {
-  // Ajout de header sur la réponse, * tout le monde à accès à l'origin de l'API
+  // Ajout de header sur la réponse,  tout le monde à accès à l'origin de l'API
   res.setHeader('Access-Control-Allow-Origin', '*');
-  // Ajout de header sur la réponse, * tout le monde à accès à certain headers et méthodes de l'API
+  // Ajout de header sur la réponse,  tout le monde à accès à certain headers et méthodes de l'API
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
   next();
