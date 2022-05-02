@@ -1,33 +1,32 @@
 <template>
     <nav>
-        <v-toolbar  height="85" app elevation="10">
-            <v-toolbar-title black v-if="$store.state.isUserLoggedIn"  >
-                <v-icon color="black"   @click="backToPostsPage" >mdi-web</v-icon>
-                <span >Groupomania</span>
+        <v-toolbar height="85" app elevation="10">
+            <v-toolbar-title black v-if="$store.state.isUserLoggedIn">
+                <v-icon color="primary" x-large @click="backToPostsPage">mdi-web</v-icon>
+                <span>Groupomania</span>
             </v-toolbar-title>
 
-            <v-toolbar-title v-else >
-                <v-icon x-large color="black">mdi-web</v-icon>
+            <v-toolbar-title v-else>
+                <v-icon x-large color="primary">mdi-web</v-icon>
                 <span color="black">Groupomania</span>
             </v-toolbar-title>
 
             <v-spacer></v-spacer>
-            <v-app-bar-nav-icon color="black" @click="drawer = !drawer"></v-app-bar-nav-icon>
+            <v-app-bar-nav-icon color="primary" @click="drawer = !drawer"></v-app-bar-nav-icon>
         </v-toolbar>
-        <v-navigation-drawer id="navdraw" right temporary  app v-model="drawer">
+        <v-navigation-drawer v-model="drawer"  app right  temporary  id="navdraw">
             <v-list-item>
                 <v-list-item-content>
-                    <v-list-item-title class="text-h6">Groupomania</v-list-item-title>
+                    <v-list-item-title class="text-h6 ">Groupomania</v-list-item-title>
                     <v-list-item-subtitle>Menu</v-list-item-subtitle>
                 </v-list-item-content>
             </v-list-item>
 
-            <v-divider></v-divider>
 
             <v-list dense nav>
                 <v-list-item v-if="$store.state.isUserLoggedIn" @click="backToPostsPage()">
                     <v-list-item-icon>
-                        <v-icon color="black">mdi-home-assistant</v-icon>
+                        <v-icon color="primary">mdi-home-assistant</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Home</v-list-item-title>
@@ -36,7 +35,7 @@
 
                 <v-list-item v-if="$store.state.isUserLoggedIn" @click="profil(UserId)">
                     <v-list-item-icon>
-                        <v-icon color="black">mdi-card-account-details-outline</v-icon>
+                        <v-icon color="primary">mdi-card-account-details-outline</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Mon Profil</v-list-item-title>
@@ -45,19 +44,16 @@
 
                 <v-list-item v-if="$store.state.isUserLoggedIn" @click="showUsers()">
                     <v-list-item-icon>
-                        <v-icon color="black">mdi-account-group</v-icon>
+                        <v-icon color="primary">mdi-account-group</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Utilisateurs</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item
-                    v-if="!$store.state.isUserLoggedIn"
-                    @click="navigateTo({ name: 'Login' })"
-                >
+                <v-list-item v-if="!$store.state.isUserLoggedIn" @click="navigateTo({ name: 'Login' })">
                     <v-list-item-icon>
-                        <v-icon color="black">mdi-consolidate</v-icon>
+                        <v-icon color="primary">mdi-consolidate</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Connexion</v-list-item-title>
@@ -66,14 +62,12 @@
 
                 <v-list-item v-if="$store.state.isUserLoggedIn" @click="logout">
                     <v-list-item-icon>
-                        <v-icon color="black">mdi-exit-to-app</v-icon>
+                        <v-icon color="primary">mdi-exit-to-app</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Déconnexion</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-
-                
             </v-list>
         </v-navigation-drawer>
     </nav>
@@ -127,16 +121,22 @@ export default {
 .mdicons {
     height: 15rem;
 }
+
 img {
     margin-top: 9px;
 }
-nav {
+
+/* nav {
+
+    position: fixed;
+    top: 0;
+    min-width: 100%;
     
-    margin: 1rem;
-    
-}
-#navdraw {
-    
-    margin: 1rem -1rem 0rem 0;
-}
+
+} */
+
+/* #navdraw {
+
+    margin: 0 -55rem 0 0;
+} */
 </style>

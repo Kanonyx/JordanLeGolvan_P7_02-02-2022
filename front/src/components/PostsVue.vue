@@ -4,7 +4,7 @@
         <div v-html="error" />
         <NewPost />
 
-        <v-container class="mt-6" v-for="(post, index) in posts" :key="index">
+        <v-container class="mt-15" v-for="(post, index) in posts" :key="index">
             <v-row justify="space-around">
                 <v-card elevation="19" width="700">
                     <v-img elevation="19" v-if="post.imageUrl" height="400px" :src="post.imageUrl">
@@ -91,7 +91,7 @@
                     <v-card-text>
                         
                         <div class="font-weight-bold ml-8 mb-2">{{ post.User.first_name }} {{ post.User.last_name }} : <v-chip
-                                class="ma-2 white--text" color="black">{{   post.message   }}</v-chip>
+                                class="ma-2 white--text" color="primary">{{   post.message   }}</v-chip>
                         </div>
                         <div class="offset-md-1 mx-auto">
 
@@ -118,7 +118,7 @@
                                         <span class="profil" @click="profil(comment.UserId)">
                                             <b>{{ comment.first_name }} {{ comment.last_name }} : </b>
                                         </span>
-                                        <v-chip class="ma-2 white--text" dark>
+                                        <v-chip class="ma-2 white--text" color="primary">
                                             {{ comment.text }}</v-chip>
                                             <v-spacer></v-spacer>
                                             

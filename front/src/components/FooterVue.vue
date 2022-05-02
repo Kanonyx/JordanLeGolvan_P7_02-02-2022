@@ -1,11 +1,17 @@
 <template>
-    <v-footer elevation="10" height="90"  class=" white foot mx-3 "  padless>
-        <v-row justify="center" no-gutters>
+    <v-footer id="vfooter" padless="padless">
+        <v-card flat tile width="100%" class="blue darken-1 text-center">
+            <v-card-text>
+                <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon>
+                    <v-icon color="white" size="24px">
+                        {{ icon }}
+                    </v-icon>
+                </v-btn>
+                 <br>{{ new Date().getFullYear() }} — Groupomania
+            </v-card-text>
+
             
-            <span class=" py-5 text-center black--text" >
-                {{ new Date().getFullYear() }} — <strong>Groupomania</strong>
-            </span>
-        </v-row>
+        </v-card>
     </v-footer>
 </template>
 
@@ -13,38 +19,20 @@
 export default {
     data: () => ({
         icons: [
-            'mdi-home',
-            'mdi-email',
-            'mdi-calendar',
-            'mdi-delete',
-        ],
-        items: [
-            'default',
-            'absolute',
-            'fixed',
-        ],
-        padless: false,
-        variant: 'default',
+            'mdi-facebook',
+            'mdi-twitter',
+            'mdi-linkedin',
+            'mdi-instagram',
+        ]
     }),
-    computed: {
-        localAttrs() {
-            const attrs = {}
-
-            if (this.variant === 'default') {
-                attrs.absolute = false
-                attrs.fixed = false
-            } else {
-                attrs[this.variant] = true
-            }
-            return attrs
-        },
-    },
 }
 </script>
 
-<style  scoped>
-.foot {
-    margin: 1rem;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+<style lang="scss" scoped>
+#vfooter {
+    position: relative;
+    bottom: 0;
+    min-width: 100%;
+    z-index: 0;
 }
 </style>

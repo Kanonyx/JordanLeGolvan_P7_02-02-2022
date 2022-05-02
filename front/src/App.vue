@@ -1,11 +1,12 @@
 <template>
   <v-app>
 
-    <v-main>
+
+    <v-main id="vmain">
       <Header />
-
-      <router-view />
-
+      <v-container class="my-8">
+        <router-view />
+      </v-container>
       <Footer />
     </v-main>
 
@@ -38,4 +39,11 @@ export default {
 </script>
 
 <style scoped>
+#vmain {
+  background: url("./assets/19366.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 </style>

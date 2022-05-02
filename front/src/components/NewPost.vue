@@ -1,5 +1,5 @@
 <template>
-    <v-card elevation="10" max-width="750" height="120" class="offset-md-3 mx-auto">
+    <v-card elevation="10" max-width="750" height="120" class="offset-md-3 mt-15 mx-auto">
 
         <v-card-text>
 
@@ -9,8 +9,12 @@
                 </v-btn>
                 <input v-show="false" ref="file" type="file" label="sel"
                     accept="image/png, image/jpeg, image/bmp, image/gif" name="image" @change="onFileChange" />
+                
+                <v-avatar class="mx-1"  v-if="url"  rounded size="54">
+                    <v-img  :src="url"></v-img>
+                </v-avatar>
                 <v-textarea label="Décrivez nous votre journée" auto-grow outlined rows="1" row-height="15" cols="500"
-                    class="mx-0" v-model="message"></v-textarea>
+                    class="mx-1" v-model="message"></v-textarea>
                 <span v-if="message">
                     <span class="d-flex justify-end mx-1">
                         <v-btn height="55" v-if="url" depressed color="primary" class="btn align-self-center"
@@ -25,9 +29,7 @@
                 </span>
             </div>
 
-            <div id="preview">
-                <img v-if="url" :src="url" />
-            </div>
+            
             <!-- Disable button if message is empty -->
 
         </v-card-text>
@@ -71,16 +73,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-#preview {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-#preview img {
-    margin: 2rem 2rem 2rem 2rem;
-    max-width: 80%;
-    max-height: 500px;
-    border-radius: 15px;
-}
+
+
 </style>

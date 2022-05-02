@@ -23,17 +23,17 @@
                                         {{ errorMessage }}
                                     </v-alert>
                                     <div class="text-center mt-3">
-                                        <v-btn class="ma-4" rounded color="black" dark @click="login()">SIGN IN</v-btn>
+                                        <v-btn class="ma-4 primary" rounded color="black"  @click="login()">SIGN IN</v-btn>
                                     </div>
                                 </v-col>
-                                <v-col cols="12" md="4" class="pa-5 black">
+                                <v-col cols="12" md="4" class="pa-5 primary">
                                     <v-card-text class="white--text mt-12">
                                         <h1 class="text-center display-1">Hello, Friend!</h1>
                                         <h5 class="text-center">Enter your personal details and start journay with us
                                         </h5>
                                     </v-card-text>
                                     <div class="text-center">
-                                        <v-btn class="ma-5" rounded outlined dark @click="step++">SIGN UP</v-btn>
+                                        <v-btn class="ma-5 dark white--text" white rounded outlined  @click="step++">SIGN UP</v-btn>
                                     </div>
                                 </v-col>
                             </v-row>
@@ -48,14 +48,14 @@
                                     </v-card-text>
 
                                     <div class="text-center">
-                                        <v-btn :disabled="email && password == ''" @click="step--" class="ma-5" rounded
+                                        <v-btn :disabled="email && password == ''" @click="step--" class="ma-5 primary" rounded
                                             outlined dark>Sign in</v-btn>
                                     </div>
                                 </v-col>
 
                                 <v-col cols="12" md="8">
                                     <v-card-text class="mt-12">
-                                        <h3 class="text-center display-2 black--text text--black">Create Account</h3>
+                                        <h3 class="text-center display-2 primary--text text--black">Create Account</h3>
 
                                         <v-form>
                                             <v-text-field prepend-icon="mdi-account" v-model="first_name" label="Prénom"
@@ -176,7 +176,7 @@ export default {
 
 <style scoped>
 #cardcontainer {
-    height: 80vh;
+    height: 85vh;
 }
 
 .elevation-12 {
