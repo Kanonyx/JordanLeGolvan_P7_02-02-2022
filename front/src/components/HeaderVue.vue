@@ -17,52 +17,52 @@
         <v-navigation-drawer v-model="drawer" inset app right  temporary  id="navdraw">
             <v-list-item>
                 <v-list-item-content>
-                    <v-list-item-title class="text-h6 ">Groupomania</v-list-item-title>
-                    <v-list-item-subtitle>Menu</v-list-item-subtitle>
+                    <v-list-item-title class="primary--text text-h6 mt-5 mb-4">Menu</v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
+                    <v-divider></v-divider>
 
 
             <v-list dense nav>
-                <v-list-item v-if="$store.state.isUserLoggedIn" @click="backToPostsPage()">
+                <v-list-item v-if="$store.state.isUserLoggedIn" class="my-11" @click="backToPostsPage()">
                     <v-list-item-icon>
-                        <v-icon color="primary">mdi-home-assistant</v-icon>
+                        <v-icon large color="primary">mdi-home-assistant</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Home</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item v-if="$store.state.isUserLoggedIn" @click="profil(UserId)">
+                <v-list-item v-if="$store.state.isUserLoggedIn" class="my-11" @click="profil(UserId)">
                     <v-list-item-icon>
-                        <v-icon color="primary">mdi-card-account-details-outline</v-icon>
+                        <v-icon large color="primary">mdi-card-account-details-outline</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Mon Profil</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item v-if="$store.state.isUserLoggedIn" @click="showUsers()">
+                <v-list-item v-if="$store.state.isUserLoggedIn" class="my-11" @click="showUsers()">
                     <v-list-item-icon>
-                        <v-icon color="primary">mdi-account-group</v-icon>
+                        <v-icon large color="primary">mdi-account-group</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Utilisateurs</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item v-if="!$store.state.isUserLoggedIn" @click="navigateTo({ name: 'Login' })">
+                <v-list-item v-if="!$store.state.isUserLoggedIn" class="my-11" @click="navigateTo({ name: 'Login' })">
                     <v-list-item-icon>
-                        <v-icon color="primary">mdi-consolidate</v-icon>
+                        <v-icon large color="primary">mdi-consolidate</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Connexion</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item v-if="$store.state.isUserLoggedIn" @click="logout">
+                <v-list-item v-if="$store.state.isUserLoggedIn" class="my-11" @click="logout">
                     <v-list-item-icon>
-                        <v-icon color="primary">mdi-exit-to-app</v-icon>
+                        <v-icon large color="primary">mdi-exit-to-app</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>Déconnexion</v-list-item-title>
