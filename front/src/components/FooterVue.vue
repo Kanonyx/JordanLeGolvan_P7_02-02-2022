@@ -1,16 +1,16 @@
 <template>
     <v-footer id="vfooter" padless="padless">
-        <v-card flat tile width="100%" class="blue darken-1 text-center">
+        <v-card elevation="8" tile width="100%" class="white darken-1 text-center">
             <v-card-text>
                 <v-btn v-for="icon in icons" :key="icon" class="mx-4" icon>
-                    <v-icon color="white" size="24px">
+                    <v-icon color="primary" size="24px">
                         {{ icon }}
                     </v-icon>
                 </v-btn>
-                 <br>{{ new Date().getFullYear() }} — Groupomania
+                <br>{{ new Date().getFullYear() }} — Groupomania
             </v-card-text>
 
-            
+
         </v-card>
     </v-footer>
 </template>
@@ -30,9 +30,9 @@ export default {
 
 <style lang="scss" scoped>
 #vfooter {
-    position: relative;
-   margin-top: 170px;
+    position: fixed;
+    bottom: 0;
     min-width: 100%;
-    z-index: 0;
+    z-index: 999;
 }
 </style>

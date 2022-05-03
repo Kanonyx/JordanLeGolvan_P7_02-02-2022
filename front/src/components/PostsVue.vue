@@ -4,10 +4,10 @@
         <div v-html="error" />
         <NewPost />
 
-        <v-container class="mt-15" v-for="(post, index) in posts" :key="index">
+        <v-container class="my-15" v-for="(post, index) in posts" :key="index">
             <v-row justify="space-around">
-                <v-card elevation="19" width="700">
-                    <v-img elevation="19" v-if="post.imageUrl" height="400px" :src="post.imageUrl">
+                <v-card elevation="8" width="700">
+                    <v-img elevation="8" v-if="post.imageUrl" height="400px" :src="post.imageUrl">
                         <v-card-title class="font-weight-light white--text ">
                             <v-avatar size="56">
                                 <img class="customcursor" alt="user" :src="post.User.avatar"
@@ -134,9 +134,9 @@
                         
                         <div>
                             <v-col width="900" class="d-flex justify-end">
-                                <v-btn  @click="commentPost(post.id)" dark>
-                                    Reply
-                                    <v-icon right dark>mdi-reply-outline </v-icon>
+                                <v-btn  @click="commentPost(post.id)" outlined class="primary--text">+
+                                    <v-icon>mdi-comment-text-outline</v-icon>
+                                    
                                 </v-btn>
                             </v-col>
                         </div>

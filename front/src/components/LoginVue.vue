@@ -2,7 +2,7 @@
     <v-container id="cardcontainer" class="fill-height" fluid>
         <v-row align="center" justify="center">
             <v-col cols="12" sm="8" md="8">
-                <v-card elevation="20">
+                <v-card elevation="8">
                     <v-window v-model="step">
                         <v-window-item :value="1">
                             <v-row>

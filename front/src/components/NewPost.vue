@@ -1,10 +1,10 @@
 <template>
-    <v-card elevation="10" max-width="750" height="120" class="offset-md-3 mt-15 mx-auto">
+    <v-card elevation="8" max-width="750" height="120" class="offset-md-3 mt-15 mx-auto">
 
         <v-card-text>
 
             <div class="d-flex justify-center mt-4">
-                <v-btn height="54" class="mx-1" dark @click="$refs.file.click()">
+                <v-btn height="54" class="mx-1" color="primary" @click="$refs.file.click()">
                     <v-icon>mdi-camera-enhance</v-icon>
                 </v-btn>
                 <input v-show="false" ref="file" type="file" label="sel"
