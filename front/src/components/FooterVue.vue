@@ -31,7 +31,7 @@ export default {
 <style lang="scss" scoped>
 #vfooter {
     position: relative;
-    bottom: 0;
+   margin-top: 170px;
     min-width: 100%;
     z-index: 0;
 }

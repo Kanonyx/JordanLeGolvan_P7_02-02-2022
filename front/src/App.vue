@@ -1,15 +1,12 @@
 <template>
   <v-app>
-
-
     <v-main id="vmain">
-      <Header />
+      <Header />  
       <v-container class="my-8">
         <router-view />
       </v-container>
       <Footer />
     </v-main>
-
   </v-app>
 </template>
 
@@ -17,6 +14,7 @@
 import { mapActions } from 'vuex';
 import Header from '@/components/HeaderVue.vue'
 import Footer from '@/components/FooterVue.vue'
+
 
 export default {
   name: 'App',
@@ -26,7 +24,9 @@ export default {
   components: {
     Header,
     Footer,
-  },
+    
+    
+},
   methods: {
     ...mapActions([
       'fetchAccessToken'

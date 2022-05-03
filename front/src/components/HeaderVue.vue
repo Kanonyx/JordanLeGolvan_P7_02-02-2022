@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav fixed>
         <v-toolbar height="85" app elevation="10">
             <v-toolbar-title black v-if="$store.state.isUserLoggedIn">
                 <v-icon color="primary" x-large @click="backToPostsPage">mdi-web</v-icon>
@@ -14,7 +14,7 @@
             <v-spacer></v-spacer>
             <v-app-bar-nav-icon color="primary" @click="drawer = !drawer"></v-app-bar-nav-icon>
         </v-toolbar>
-        <v-navigation-drawer v-model="drawer"  app right  temporary  id="navdraw">
+        <v-navigation-drawer v-model="drawer" inset app right  temporary  id="navdraw">
             <v-list-item>
                 <v-list-item-content>
                     <v-list-item-title class="text-h6 ">Groupomania</v-list-item-title>
@@ -126,17 +126,19 @@ img {
     margin-top: 9px;
 }
 
-/* nav {
-
+nav {
+    width: 100%;
     position: fixed;
     top: 0;
-    min-width: 100%;
-    
+    top: 0;
+    z-index: 1000;
 
-} */
+} 
 
 /* #navdraw {
-
-    margin: 0 -55rem 0 0;
-} */
+    width: 35rem;
+    
+    position: fixed;
+    top: 0;
+}  */
 </style>
