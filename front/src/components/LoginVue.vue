@@ -8,7 +8,7 @@
                             <v-row>
                                 <v-col classe="cardbox" cols="12" md="8">
                                     <v-card-text class="mt-12">
-                                        <h1 class="text-center display-2 black--text text--black">Groupomania</h1>
+                                        <h1 class="text-center font-weight-light display-2 black--text text--black">Groupomania</h1>
 
                                         <h4 class="text-center mt-4">Ensure your email for registration</h4>
                                         <v-text-field prepend-icon="mdi-account" name="login" label="Adresse mail"

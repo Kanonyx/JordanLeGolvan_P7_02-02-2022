@@ -1,58 +1,55 @@
 <template>
     <v-container>
-        <v-card class="mx-auto my-6" max-width="900">
-            <!-- <v-img height="250" src="@/assets/duotone.png"></v-img> -->
+        <v-card class=" usercard  mx-auto " d-flex elevation="8" max-width="700">
 
-            <v-card-title>
-                <v-avatar rounded size="64">
-                    <v-img :src="user.avatar"></v-img>
-                </v-avatar>
-                <span class="ml-4">{{ user.first_name }} {{ user.last_name }}</span>
-            </v-card-title>
+            <v-img height="350" src="@/assets/luke-chesser-IGtutkXikuc-unsplash.jpg">
+                <v-container class="d-flex  justify-center mt-6">
+                    <div class="d-flex flex-column align-center justify-center ">
+                        <v-btn fab  small absolute color="white"
+                            v-if="user.id == UserId || userAdmin === true" class="pencil" @click="elementToEdit">
+                            <v-icon color="primary">mdi-camera</v-icon>
+                        </v-btn>
+                        <v-avatar a elevation="15" class="vav" size="154">
+                            <v-img rounded :src="user.avatar"></v-img>
+                        </v-avatar>
+                        <div class="username font-weight-light mt-5 white--text align-center justify-center">{{
+                                user.first_name
+                        }} {{ user.last_name }}</div>
+                    </div>
+                </v-container>
+            </v-img>
 
-            <v-card-text>
-                <div class="my-2 text-subtitle-1">
-                    <v-alert dense text type="success">
-                        Membre depuis : {{ dateParser(user.createdAt) }}
-                    </v-alert>
-                </div>
+            <v-card-text class="d-flex flex-column align-center justify-center ">
+                <template v-if="user.isAdmin">
+                    <span class="ml-1 my-2 text-subtitle-1" color="primary">Administrateur membre depuis le
+                        {{ dateParser(user.createdAt) }}</span>
+                </template>
+                <template v-else>
+                    <span class="ml-1 my-2 text-subtitle-1" color="primary">Utilisateur membre depuis le
+                        {{ dateParser(user.createdAt) }}
+                    </span>
+                </template>
             </v-card-text>
 
             <v-divider class="mx-4"></v-divider>
 
-            <v-card-title>📌Action/information sur le compte</v-card-title>
 
-            <v-card-text>
-                <v-alert dense text type="info">
-                    <span>{{ user.first_name }} {{ user.last_name }} est un : </span>
-                    <template v-if="user.isAdmin">
-                        <v-icon color="primary" small>mdi-gavel</v-icon>
-                        <span class="ml-1" color="primary">Administrateur</span>
-                    </template>
-                    <template v-else>
-                        <v-icon color="green" small>mdi-account</v-icon>
-                        <span class="ml-1" color="primary">Utilisateur</span>
-                    </template>
-                </v-alert>
-            </v-card-text>
+
 
             <v-alert dense text type="success" class="mx-10" v-if="deleteMessage">
                 {{ deleteMessage }}
             </v-alert>
 
-            <v-card-actions class="d-flex justify-center mb-2 flex-wrap">
-                <v-btn color="error" v-if="user.id == UserId || userAdmin === true" class="mx-3" @click="deleteAccount">
-                    Supprimer le compte
+            <v-card-actions class="d-flex justify-center mb-2 mt-5 flex-wrap">
+
+                <v-btn v-if="user.id == UserId" class="mx-3" @click="editTheName()">
+                    <v-icon color="primary"> mdi-account-edit</v-icon>
+                </v-btn>
+                <v-btn alt="supprimer le profil" color="" v-if="user.id == UserId || userAdmin === true" class="mx-3" @click="deleteAccount">
+                    <v-icon color="error">mdi-delete-alert</v-icon>
                 </v-btn>
 
-                <v-btn color="primary" v-if="user.id == UserId" class="mx-3" @click="editTheName()">
-                    Éditer le compte
-                </v-btn>
 
-                <v-btn color="primary" v-if="user.id == UserId || userAdmin === true" class="mx-3"
-                    @click="elementToEdit">
-                    Changer de photo
-                </v-btn>
             </v-card-actions>
 
             <v-dialog v-model="dialog" width="500">
@@ -101,7 +98,7 @@
                 </v-card>
             </v-dialog>
         </v-card>
-    
+
     </v-container>
 </template>
 
@@ -230,5 +227,18 @@ export default {
 <style lang="scss" scoped>
 .v-card__actions>.v-btn.v-btn {
     margin-bottom: 1.5rem;
+}
+
+.usercard {
+    margin-top: 8rem;
+}
+
+.username {
+    font-size: 25px;
+}
+
+.pencil {
+    margin: 2rem -7rem 0 0;
+    z-index: 1000;
 }
 </style>

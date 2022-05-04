@@ -1,11 +1,11 @@
 <template>
-    <v-card elevation="8" max-width="750" height="120" class="offset-md-3 mt-15 mx-auto">
+    <v-card id="newpost" elevation="8" max-width="750" height="120" class="offset-md-3 mx-auto">
 
         <v-card-text>
 
             <div class="d-flex justify-center mt-4">
-                <v-btn height="54" class="mx-1" color="primary" @click="$refs.file.click()">
-                    <v-icon>mdi-camera-enhance</v-icon>
+                <v-btn height="54" outlined class="mx-1" color="primary" @click="$refs.file.click()">
+                    <v-icon  >mdi-camera-enhance</v-icon>
                 </v-btn>
                 <input v-show="false" ref="file" type="file" label="sel"
                     accept="image/png, image/jpeg, image/bmp, image/gif" name="image" @change="onFileChange" />
@@ -13,7 +13,7 @@
                 <v-avatar class="mx-1"  v-if="url"  rounded size="54">
                     <v-img  :src="url"></v-img>
                 </v-avatar>
-                <v-textarea label="Décrivez nous votre journée" auto-grow outlined rows="1" row-height="15" cols="500"
+                <v-textarea label="Quoi de neuf ?" auto-grow outlined rows="1" row-height="15" cols="500"
                     class="mx-1" v-model="message"></v-textarea>
                 <span v-if="message">
                     <span class="d-flex justify-end mx-1">
@@ -74,6 +74,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 
-
+#newpost {
+    margin-top: 85px;
+}
 
 </style>

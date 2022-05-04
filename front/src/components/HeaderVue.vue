@@ -1,14 +1,14 @@
 <template>
     <nav  fixed class="mb-15">
         <v-toolbar height="85" app elevation="8">
-            <v-toolbar-title black v-if="$store.state.isUserLoggedIn">
-                <v-icon color="primary" x-large @click="backToPostsPage">mdi-web</v-icon>
-                <span>Groupomania</span>
+            <v-toolbar-title class="custompointer d-flex flex-row" @click="backToPostsPage" black v-if="$store.state.isUserLoggedIn">
+                <v-icon color="primary" x-large >mdi-web</v-icon>
+                <h1 class="font-weight-light black--text">Groupo<span class="primary--text">mania</span> </h1>
             </v-toolbar-title>
 
-            <v-toolbar-title v-else>
+            <v-toolbar-title  class="d-flex flex-row" v-else>
                 <v-icon x-large color="primary">mdi-web</v-icon>
-                <span color="black">Groupomania</span>
+                <h1 class="font-weight-light black--text">Groupo<span class="primary--text">mania</span> </h1>
             </v-toolbar-title>
 
             <v-spacer></v-spacer>
@@ -136,10 +136,7 @@ nav {
 
 } 
 
-/* #navdraw {
-    width: 35rem;
-    
-    position: fixed;
-    top: 0;
-}  */
+.custompointer {
+    cursor: pointer;
+}
 </style>

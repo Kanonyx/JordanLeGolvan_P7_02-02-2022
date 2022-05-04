@@ -6,11 +6,11 @@
 
         <v-container class="my-15" v-for="(post, index) in posts" :key="index">
             <v-row justify="space-around">
-                <v-card elevation="8" width="700">
+                <v-card elevation="8" width="750">
                     <v-img elevation="8" v-if="post.imageUrl" height="400px" :src="post.imageUrl">
                         <v-card-title class="font-weight-light white--text ">
-                            <v-avatar size="56">
-                                <img class="customcursor" alt="user" :src="post.User.avatar"
+                            <v-avatar  size="69">
+                                <img height="400px" class="customcursor" alt="user" :src="post.User.avatar"
                                     @click="profil(post.UserId)" />
                             </v-avatar>
                             <p class="mt-3 ml-3" @click="profil(post.UserId)"> {{
@@ -91,7 +91,7 @@
                     <v-card-text>
                         
                         <div class="font-weight-bold ml-8 mb-2">{{ post.User.first_name }} {{ post.User.last_name }} : <v-chip
-                                class="ma-2 white--text" color="primary">{{   post.message   }}</v-chip>
+                                class="ma-2 white--text" outlined color="primary">{{   post.message   }}</v-chip>
                         </div>
                         <div class="offset-md-1 mx-auto">
 
@@ -134,8 +134,8 @@
                         
                         <div>
                             <v-col width="900" class="d-flex justify-end">
-                                <v-btn  @click="commentPost(post.id)" outlined class="primary--text">+
-                                    <v-icon>mdi-comment-text-outline</v-icon>
+                                <v-btn  @click="commentPost(post.id)" outlined class="primary--text">
+                                    <v-icon>mdi-tooltip-edit-outline</v-icon>
                                     
                                 </v-btn>
                             </v-col>
