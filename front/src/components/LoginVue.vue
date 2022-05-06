@@ -33,7 +33,7 @@
                                         </h5>
                                     </v-card-text>
                                     <div class="text-center">
-                                        <v-btn class="ma-5 dark white--text" white rounded outlined  @click="step++">SIGN UP</v-btn>
+                                        <v-btn class="ma-5 primary--text" white rounded   @click="step++">SIGN UP</v-btn>
                                     </div>
                                 </v-col>
                             </v-row>
@@ -48,8 +48,7 @@
                                     </v-card-text>
 
                                     <div class="text-center">
-                                        <v-btn  @click="step--" class="ma-5 " rounded
-                                            outlined color="white">Sign in</v-btn>
+                                        <v-btn  @click="step--" class="ma-5 primary--text" white rounded>Sign in</v-btn>
                                     </div>
                                 </v-col>
 
