@@ -48,7 +48,7 @@
                                     </v-card-text>
 
                                     <div class="text-center">
-                                        <v-btn :disabled="email && password == ''" @click="step--" class="ma-5 " rounded
+                                        <v-btn  @click="step--" class="ma-5 " rounded
                                             outlined color="white">Sign in</v-btn>
                                     </div>
                                 </v-col>
