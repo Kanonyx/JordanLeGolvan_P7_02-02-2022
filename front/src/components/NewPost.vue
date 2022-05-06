@@ -1,9 +1,9 @@
 <template>
-    <v-card id="newpost" elevation="8" max-width="750" height="120" class="offset-md-3 mx-auto">
+    <v-card id="newpost" elevation="8" max-width="750" height="87" class="offset-md-3 mx-auto">
 
         <v-card-text>
 
-            <div class="d-flex justify-center mt-4">
+            <div class="d-flex justify-center mt-">
                 <v-btn height="54" outlined class="mx-1" color="primary" @click="$refs.file.click()">
                     <v-icon  >mdi-camera-enhance</v-icon>
                 </v-btn>
