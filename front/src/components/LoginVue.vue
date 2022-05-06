@@ -8,9 +8,9 @@
                             <v-row>
                                 <v-col classe="cardbox" cols="12" md="8">
                                     <v-card-text class="mt-12">
-                                        <h1 class="text-center font-weight-light display-2 black--text text--black">Groupomania</h1>
+                                        <h1 class="text-center font-weight-light display-2 black--text ">Groupomania</h1>
 
-                                        <h4 class="text-center mt-4">Ensure your email for registration</h4>
+                                        <h4 class="text-center font-weight-light mt-4">Ensure your email for registration</h4>
                                         <v-text-field prepend-icon="mdi-account" name="login" label="Adresse mail"
                                             type="text" v-model="email" :rules="emailValidate"
                                             @click="errorMessage = ''"></v-text-field>
@@ -23,13 +23,13 @@
                                         {{ errorMessage }}
                                     </v-alert>
                                     <div class="text-center mt-3">
-                                        <v-btn class="ma-4 primary" rounded color="black"  @click="login()">SIGN IN</v-btn>
+                                        <v-btn class="ma-4 primary" rounded color="white"  @click="login()">SIGN IN</v-btn>
                                     </div>
                                 </v-col>
                                 <v-col cols="12" md="4" class="pa-5 primary">
                                     <v-card-text class="white--text mt-12">
-                                        <h1 class="text-center display-1">Hello, Friend!</h1>
-                                        <h5 class="text-center">Enter your personal details and start journay with us
+                                        <h1 class="text-center font-weight-light display-1">Hello, Friend!</h1>
+                                        <h5 class="text-center font-weight-light">Enter your personal details and start journay with us
                                         </h5>
                                     </v-card-text>
                                     <div class="text-center">
@@ -40,22 +40,22 @@
                         </v-window-item>
                         <v-window-item :value="2">
                             <v-row class="fill-height">
-                                <v-col cols="12" md="4" class="black">
+                                <v-col cols="12" md="4" class="primary">
                                     <v-card-text class="white--text mt-12">
-                                        <h1 class="text-center display-1">Welcome Back!</h1>
-                                        <h5 class="text-center">To Keep connected with us please login with your
+                                        <h1 class="text-center font-weight-light display-1">Welcome Back!</h1>
+                                        <h5 class="text-center font-weight-light">To Keep connected with us please login with your
                                             personnel info</h5>
                                     </v-card-text>
 
                                     <div class="text-center">
-                                        <v-btn :disabled="email && password == ''" @click="step--" class="ma-5 primary" rounded
-                                            outlined dark>Sign in</v-btn>
+                                        <v-btn :disabled="email && password == ''" @click="step--" class="ma-5 " rounded
+                                            outlined color="white">Sign in</v-btn>
                                     </div>
                                 </v-col>
 
                                 <v-col cols="12" md="8">
                                     <v-card-text class="mt-12">
-                                        <h3 class="text-center display-2 primary--text text--black">Create Account</h3>
+                                        <h3 class="text-center display-2  font-weight-light text--black">Create Account</h3>
 
                                         <v-form>
                                             <v-text-field prepend-icon="mdi-account" v-model="first_name" label="Prénom"
@@ -81,7 +81,7 @@
                                     </v-alert>
                                     <div class="text-center mt-n5">
                                         <v-btn :disabled="email && password && last_name && first_name == ''"
-                                            @click="register()" class="ma-5" rounded color="black black" dark>SIGN UP
+                                            @click="register()" class="ma-5 primary--text" rounded color="white" primary>SIGN UP
                                         </v-btn>
                                     </div>
                                 </v-col>
