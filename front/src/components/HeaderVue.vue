@@ -1,6 +1,6 @@
 <template>
     <nav  fixed class="mb-15">
-        <v-toolbar height="85" app elevation="8">
+        <v-toolbar height="85"  elevation="8">
             <v-toolbar-title class="custompointer d-flex flex-row" @click="backToPostsPage" black v-if="$store.state.isUserLoggedIn">
                 <v-icon color="primary" x-large >mdi-web</v-icon>
                 <h1 class="font-weight-light black--text">Groupo<span class="primary--text">mania</span> </h1>
@@ -14,7 +14,7 @@
             <v-spacer></v-spacer>
             <v-app-bar-nav-icon color="primary" x-large @click="drawer = !drawer"></v-app-bar-nav-icon>
         </v-toolbar>
-        <v-navigation-drawer v-model="drawer" inset app right  temporary  id="navdraw">
+        <v-navigation-drawer v-model="drawer" inset app right  temporary >
             <v-list-item>
                 <v-list-item-content>
                     <v-list-item-title class="primary--text text-h6 mt-5 mb-4">Menu</v-list-item-title>
@@ -91,11 +91,9 @@ export default {
             this.$store.dispatch("setUser", null);
             localStorage.removeItem("accessToken");
             localStorage.removeItem("user");
-            // catch method to remove basic error with multiple click on router
             this.$router.push({ name: "Login" }).catch(() => { });
         },
         showUsers() {
-            // See advance problem about this in function
             const router = this.$router;
             setTimeout(function () {
                 router.push("/users").catch(() => { });

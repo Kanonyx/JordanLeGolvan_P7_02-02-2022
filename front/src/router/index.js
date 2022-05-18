@@ -51,7 +51,7 @@ const router = new VueRouter({
       // Vue2 required to catchAll *
       // 404 error PageNotFound
       path: "/profil/:id-:afterUser(.*)",
-      name: "NotFound",
+      name: "NotFounded",
       component: PageNotFound,
       meta: {
         requiresAuth: false
