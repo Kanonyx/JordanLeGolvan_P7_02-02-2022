@@ -5,15 +5,19 @@ Projet 7 de la formation OpenClassrooms
 
 
 
+# JordanLeGolvan_P7_02-02-2022
+
+À propos :
+Projet 7 de la formation OpenClassrooms
+
+
+
 Prérequis
 NodeJs, VSCode, MySQL
 
-Installation:
+INSTALLATION:
 Dans le dossier back-end via VSCode :
 npm install
-Dans le dossier front-end :
-npm install
-
 
 
 Créer une base de donnée avec le nom groupomania via la console MySQL
@@ -34,7 +38,10 @@ Créez un fichier db.config.json dans le dossier back
 }
 Dans serveur back-end
 npm run server
-Dansle serveur front-end
+___________________________________________________
+Dans le dossier front-end :
+npm install
+puis
 npm run serve
 
 Compiles and minifies for production
