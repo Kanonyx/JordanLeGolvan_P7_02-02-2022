@@ -1,51 +1,44 @@
-# JordanLeGolvan_P7_02-02-2022
+### Prérequis
 
-À propos :
-Projet 7 de la formation OpenClassrooms
+Dans une console Node.js (ou directement avec la console de Visual Studio Code)
+1. Accéder au dossier back-end :
+   ```sh
+   npm install
+   ```
+2. Accéder au dossier front-end :
+   ```sh
+   npm install
+   ```
 
+### Installation
 
+Une fois Node.js correctement installé (dans le dossier front, mais aussi dans le dossier back). Vous aurez besoin de lancer les serveurs grâce aux commandes suivantes :
 
-# JordanLeGolvan_P7_02-02-2022
-
-À propos :
-Projet 7 de la formation OpenClassrooms
-
-
-
-Prérequis
-NodeJs, VSCode, MySQL
-
-INSTALLATION:
-Dans le dossier back-end via VSCode :
-npm install
-
-
-Créer une base de donnée avec le nom groupomania via la console MySQL
-CREATE DATABASE groupomania;
-
-Créez un fichier .env dans le dossier back
-JWT_TOKEN=SECRET-KEY
-
-Créez un fichier db.config.json dans le dossier back
-{
-   "development": {
-      "host": "host_name",
-      "database": "VotreDatabase_name",
-      "username": "VotreSqlUername",
-      "password": "VotreSqlPassword",
-      "dialect": "mysql"
+1. Créer une base de donnée avec le nom groupomania
+   ```sh
+   CREATE DATABASE groupomania;
+   ```
+2. Créer un fichier .env dans le dossier back
+   ```js
+   JWT_TOKEN=SECRET-KEY
+   ```
+3. Créer un fichier db.config.json dans le dossier back
+   ```json
+   {
+      "development": {
+         "host": "host_name",
+         "database": "database_name",
+         "username": "username",
+         "password": "password",
+         "dialect": "mysql"
+      }
    }
-}
-Dans serveur back-end
-npm run server
-___________________________________________________
-Dans le dossier front-end :
-npm install
-puis
-npm run serve
-
-Compiles and minifies for production
-npm run build
-
-Lints and fixes files
-npm run lint
+   ```
+4. Lancer le serveur back-end
+   ```sh
+   nodemon server
+   ```
+5. Lancer le serveur front-end
+   ```sh
+   npm run serve
+   ```
